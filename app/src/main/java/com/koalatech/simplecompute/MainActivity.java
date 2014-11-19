@@ -8,6 +8,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 
 import com.koalatech.simplecompute.R;
 
@@ -22,20 +24,54 @@ public class MainActivity extends Activity {
         Button ClickBtn = (Button) findViewById(R.id.Compute_Btn);
         Button ClearBtn = (Button) findViewById(R.id.Clear_Btn);
 
+        final RadioGroup RGroup = (RadioGroup) findViewById(R.id.myRadioGroup);
+            final RadioButton RBtn_add = (RadioButton) findViewById(R.id.AddOper);
+            final RadioButton RBtn_sub = (RadioButton) findViewById(R.id.SubOper);
+            final RadioButton RBtn_mul = (RadioButton) findViewById(R.id.MulOper);
+            final RadioButton RBtn_div = (RadioButton) findViewById(R.id.DivOper);
+
         final EditText InputTextBox1 = (EditText) findViewById(R.id.TextBox1);
         final EditText InputTextBox2 = (EditText) findViewById(R.id.TextBox2);
         final EditText InputTextBox_Result = (EditText) findViewById(R.id.TextBox_Result);
-        InputTextBox_Result.setEnabled(false);
+
+        InputTextBox_Result.setEnabled(false); //make the Result TextBox not editable
+
+
         //compute for contents
         ClickBtn.setOnClickListener(new View.OnClickListener(){
             public void onClick(View arg0) {
+                int SelectedButtonId = RGroup.getCheckedRadioButtonId();
                 try{
-                    int x = Integer.parseInt(InputTextBox1.getText().toString());
-                    int y = Integer.parseInt(InputTextBox2.getText().toString());
-                    int result = x + y;
-                    InputTextBox_Result.setText(Integer.toString(result));
-                }catch(NumberFormatException ex){
-                }
+
+                   if(SelectedButtonId == RBtn_add.getId()) {
+                        int x = Integer.parseInt(InputTextBox1.getText().toString());
+                        int y = Integer.parseInt(InputTextBox2.getText().toString());
+                        int result = x + y;
+                        InputTextBox_Result.setText(Integer.toString(result));
+                   }
+
+                   else if(SelectedButtonId == RBtn_sub.getId()) {
+                        int x = Integer.parseInt(InputTextBox1.getText().toString());
+                        int y = Integer.parseInt(InputTextBox2.getText().toString());
+                        int result = x - y;
+                        InputTextBox_Result.setText(Integer.toString(result));
+                    }
+                   else if(SelectedButtonId == RBtn_mul.getId()) {
+                        int x = Integer.parseInt(InputTextBox1.getText().toString());
+                        int y = Integer.parseInt(InputTextBox2.getText().toString());
+                        int result = x * y;
+                        InputTextBox_Result.setText(Integer.toString(result));
+                    }
+                   else if(SelectedButtonId == RBtn_div.getId()) {
+                        int x = Integer.parseInt(InputTextBox1.getText().toString());
+                        int y = Integer.parseInt(InputTextBox2.getText().toString());
+                        int result = x / y;
+                        InputTextBox_Result.setText(Integer.toString(result));
+                    }
+                   else {}
+
+
+                }catch(NumberFormatException ex){}
             }
         });
 
@@ -46,6 +82,7 @@ public class MainActivity extends Activity {
                 InputTextBox1.setText("");
                 InputTextBox2.setText("");
                 InputTextBox_Result.setText("");
+                RGroup.clearCheck();
             }
         });
 

@@ -44,7 +44,7 @@
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Result"
+        android:text="@string/Result"
         android:id="@+id/textView"
         android:layout_below="@+id/TextBox2"
         android:layout_alignParentRight="true"
@@ -64,24 +64,79 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/TextBox_Result"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/gridLayout"
+        android:layout_alignParentTop="false"
+        android:columnCount="25"
+        android:rowCount="12">
+        <RadioGroup
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/myRadioGroup"
+            android:background="#abf234"
+            >
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/RBtn_Add"
+                android:id="@+id/AddOper"
+                android:layout_row="0"
+                android:layout_column="1" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/RBtn_Mul"
+                android:id="@+id/MulOper"
+                android:layout_row="1"
+                android:layout_column="1" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/RBtn_Div"
+                android:id="@+id/DivOper"
+                android:layout_row="1"
+                android:layout_column="2" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Subtraction"
+                android:id="@+id/SubOper"
+                android:layout_row="0"
+                android:layout_column="2" />
+        </RadioGroup>
+    </GridLayout>
+
     <Button
         android:id="@+id/Compute_Btn"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="Calculate"
 
-        android:layout_marginTop="33dp"
-        android:layout_below="@+id/TextBox_Result"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_row="4"
+        android:layout_column="9"
+        android:layout_below="@+id/gridLayout"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
     <Button
         android:id="@+id/Clear_Btn"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="Clear"
 
+        android:layout_row="5"
+        android:layout_column="9"
         android:layout_below="@+id/Compute_Btn"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>

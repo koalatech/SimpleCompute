@@ -76,7 +76,13 @@ public class MainActivity extends Activity {
                    }
 
 
-                }catch(NumberFormatException ex){}
+                }catch(NumberFormatException ex){
+                    Toast.makeText(getApplicationContext(), "Invalid values!",
+                            Toast.LENGTH_SHORT).show();
+
+                    InputTextBox1.setText("");
+                    InputTextBox2.setText("");
+                }
             }
         });
 

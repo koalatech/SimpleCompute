@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import com.koalatech.simplecompute.R;
 
@@ -68,7 +69,11 @@ public class MainActivity extends Activity {
                         int result = x / y;
                         InputTextBox_Result.setText(Integer.toString(result));
                     }
-                   else {}
+                   else {
+                       Toast.makeText(getApplicationContext(), "Please select an operation...",
+                                                             Toast.LENGTH_SHORT).show();
+
+                   }
 
 
                 }catch(NumberFormatException ex){}

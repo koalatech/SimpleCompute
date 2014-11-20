@@ -1,20 +1,30 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:background="#0099cc"
+    android:layout_height="match_parent" android:background="@drawable/back"
     tools:context="com.koalatech.simplecompute.About_Page">
 
     <!-- The primary full-screen view. This can be replaced with whatever view
          is needed to present your content, e.g. VideoView, SurfaceView,
          TextureView, etc. -->
-    <TextView android:id="@+id/fullscreen_content" android:layout_width="match_parent"
-        android:layout_height="match_parent" android:keepScreenOn="true" android:textColor="#33b5e5"
-        android:textStyle="bold" android:textSize="50sp" android:gravity="center"
-        android:text="@string/about_content" />
+
 
     <!-- This FrameLayout insets its children based on system windows using
          android:fitsSystemWindows. -->
     <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent"
         android:fitsSystemWindows="true">
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:id="@+id/imageView"
+            android:layout_gravity="center"
+            android:background="@drawable/koalatech_logo" />
+
+
+        <TextView android:id="@+id/fullscreen_content" android:layout_width="match_parent"
+            android:layout_height="match_parent" android:keepScreenOn="true" android:textColor="#FFFFFF"
+            android:textStyle="bold" android:textSize="25sp" android:gravity="top"
+            android:text="@string/about_content" />
 
         <LinearLayout android:id="@+id/fullscreen_content_controls" style="?metaButtonBarStyle"
             android:layout_width="match_parent" android:layout_height="wrap_content"
@@ -28,12 +38,7 @@
 
         </LinearLayout>
 
-        <ImageView
-            android:layout_width="378dp"
-            android:layout_height="378dp"
-            android:id="@+id/imageView"
-            android:layout_gravity="center"
-            android:background="@drawable/koalatech_logo" />
+
     </FrameLayout>
 
 </FrameLayout>

@@ -81,7 +81,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:id="@+id/myRadioGroup"
-            android:background="#abf234"
+
             >
             <RadioButton
                 android:layout_width="wrap_content"

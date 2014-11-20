@@ -9,10 +9,13 @@
     <string name="about_content">koalatech</string>
     <string name="title_activity_about__page">About_Page</string>
     <string name="about_back_button">Back</string>
+    <string name="Input1">Input 1</string>
+    <string name="Input2">Input 2</string>
     <string name="Result">Result</string>
     <string name="RBtn_Add">Addition</string>
     <string name="RBtn_Mul">Multiplication</string>
     <string name="RBtn_Div">Division</string>
+
 
 
 </resources>
